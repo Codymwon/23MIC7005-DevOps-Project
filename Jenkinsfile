@@ -38,6 +38,8 @@ pipeline {
         stage('Docker Test') {
             steps {
                 echo 'Running Container Test...'
+                // Force remove any leftover test container from previous runs
+                sh 'docker rm -f test-web-container || true'
                 sh "docker run -d -p 8089:80 --name test-web-container ${DOCKER_REGISTRY_USER}/${IMAGE_NAME}:${IMAGE_TAG}"
                 sleep 3
                 script {
