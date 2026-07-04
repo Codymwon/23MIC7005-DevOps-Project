@@ -29,7 +29,7 @@ services:
       - "8081:80"
     volumes:
       - nagios_data:/opt/nagios/var
-      - ./nagios/website.cfg:/opt/nagios/etc/objects/website.cfg
+      - ./nagios/website.cfg:/opt/nagios/etc/conf.d/website.cfg
     environment:
       - NAGIOSADMIN_USER=nagiosadmin
       - NAGIOSADMIN_NUMPASS=admin123

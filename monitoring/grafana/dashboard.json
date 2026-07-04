@@ -30,8 +30,7 @@
       "title": "CPU Usage (%)",
       "type": "timeseries",
       "datasource": {
-        "type": "graphite",
-        "uid": "graphite-ds"
+        "type": "graphite"
       },
       "targets": [
         {
@@ -63,8 +62,7 @@
       "title": "Memory Usage (%)",
       "type": "timeseries",
       "datasource": {
-        "type": "graphite",
-        "uid": "graphite-ds"
+        "type": "graphite"
       },
       "targets": [
         {
@@ -96,8 +94,7 @@
       "title": "Network Traffic (I/O)",
       "type": "timeseries",
       "datasource": {
-        "type": "graphite",
-        "uid": "graphite-ds"
+        "type": "graphite"
       },
       "targets": [
         {
@@ -132,8 +129,7 @@
       "title": "System Uptime",
       "type": "stat",
       "datasource": {
-        "type": "graphite",
-        "uid": "graphite-ds"
+        "type": "graphite"
       },
       "targets": [
         {
