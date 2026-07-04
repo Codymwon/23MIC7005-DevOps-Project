@@ -38,13 +38,21 @@ pipeline {
         stage('Docker Test') {
             steps {
                 echo 'Running Container Test...'
-                // Force remove any leftover test container from previous runs
+                // Force remove any leftover test container
                 sh 'docker rm -f test-web-container || true'
-                sh "docker run -d -p 8089:80 --name test-web-container ${DOCKER_REGISTRY_USER}/${IMAGE_NAME}:${IMAGE_TAG}"
+                script {
+                    // Dynamically detect the network name of this Jenkins container
+                    def jenkinsNet = sh(script: "docker inspect -f '{{range \$k, \$v := .NetworkSettings.Networks}}{\$k}{{end}}' \$(cat /etc/hostname) | head -n 1", returnStdout: true).trim()
+                    echo "Jenkins container network detected: ${jenkinsNet}"
+                    
+                    // Run test container on the same network to enable DNS resolution
+                    sh "docker run -d --name test-web-container --network ${jenkinsNet} ${DOCKER_REGISTRY_USER}/${IMAGE_NAME}:${IMAGE_TAG}"
+                }
                 sleep 3
                 script {
                     try {
-                        sh "curl -sI http://localhost:8089 | grep 'HTTP/1.1 200 OK'"
+                        // Query the container by its DNS name directly
+                        sh "curl -sI http://test-web-container | grep 'HTTP/1.1 200 OK'"
                         echo 'Test Passed: Website is reachable and serves HTTP 200 OK!'
                     } finally {
                         echo 'Stopping and removing test container...'
