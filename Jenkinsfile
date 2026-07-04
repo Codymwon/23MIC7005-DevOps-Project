@@ -38,16 +38,11 @@ pipeline {
         stage('Docker Test') {
             steps {
                 echo 'Running Container Test...'
-                // Run container temporarily
-                sh "docker run -d -p 8085:80 --name test-web-container ${DOCKER_REGISTRY_USER}/${IMAGE_NAME}:${IMAGE_TAG}"
-                
-                // Sleep to allow container to start
+                sh "docker run -d -p 8089:80 --name test-web-container ${DOCKER_REGISTRY_USER}/${IMAGE_NAME}:${IMAGE_TAG}"
                 sleep 3
-                
-                // Verify endpoint responds
                 script {
                     try {
-                        sh "curl -sI http://localhost:8085 | grep 'HTTP/1.1 200 OK'"
+                        sh "curl -sI http://localhost:8089 | grep 'HTTP/1.1 200 OK'"
                         echo 'Test Passed: Website is reachable and serves HTTP 200 OK!'
                     } finally {
                         echo 'Stopping and removing test container...'
