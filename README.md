@@ -10,7 +10,7 @@ This project contains a complete DevOps implementation for Use Case 5 (Tourism I
 | :--- | :--- | :--- | :--- |
 | **Website** | `30080` (NodePort) / `8085` (Local) | Static Website | N/A |
 | **Jenkins** | `8080` | Build Automation / Pipeline | Initial admin password printed in docker logs |
-| **Nagios** | `8081` | Availability Checker | User: `nagiosadmin` / Password: `admin123` |
+| **Nagios** | `8081` | Availability Checker | User: `nagiosadmin` / Password: `nagios` |
 | **Graphite** | `8082` | Metrics Database (Carbon receives on `2003`) | N/A |
 | **Grafana** | `3000` | Metric Visualizations | User: `admin` / Password: `admin` |
 
@@ -71,7 +71,7 @@ You should see messages stating `Metrics sent successfully.` every 5 seconds.
 
 #### Nagios (Availability)
 - Navigate to `http://localhost:8081`
-- Enter credentials: `nagiosadmin` / `admin123`
+- Enter credentials: `nagiosadmin` / `nagios`
 - Click **Hosts** or **Services** in the left panel to verify that `tourism-website` is `UP` and the `HTTP Availability` check shows `OK`.
 
 #### Graphite (Metrics Store)

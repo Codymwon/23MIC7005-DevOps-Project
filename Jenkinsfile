@@ -41,8 +41,8 @@ pipeline {
                 // Force remove any leftover test container
                 sh 'docker rm -f test-web-container || true'
                 script {
-                    // Dynamically detect the network name of this Jenkins container
-                    def jenkinsNet = sh(script: "docker inspect -f '{{range \$k, \$v := .NetworkSettings.Networks}}{\$k}{{end}}' \$(cat /etc/hostname) | head -n 1", returnStdout: true).trim()
+                    // Dynamically detect the network name of this Jenkins container using json output and cut
+                    def jenkinsNet = sh(script: "docker inspect -f '{{json .NetworkSettings.Networks}}' \$(cat /etc/hostname) | cut -d'\"' -f2", returnStdout: true).trim()
                     echo "Jenkins container network detected: ${jenkinsNet}"
                     
                     // Run test container on the same network to enable DNS resolution
@@ -82,22 +82,26 @@ pipeline {
         stage('Kubernetes Deploy') {
             steps {
                 echo 'Deploying to Kubernetes cluster...'
-                // Apply the deployment and service manifests
-                // We use kubeconfig credentials if available, otherwise fallback to local context
                 script {
-                    try {
-                        configFileProvider([configFile(fileId: 'kubeconfig', variable: 'KUBECONFIG')]) {
-                            sh 'kubectl apply -f k8s/deployment.yaml --kubeconfig=$KUBECONFIG'
-                            sh 'kubectl apply -f k8s/service.yaml --kubeconfig=$KUBECONFIG'
-                        }
-                    } catch (Exception e) {
-                        echo "Failed using configFileProvider, falling back to host's kubectl context..."
-                        sh 'kubectl apply -f k8s/deployment.yaml'
-                        sh 'kubectl apply -f k8s/service.yaml'
-                    }
+                    sh '''
+                        if [ -f /root/.kube/config ]; then
+                            echo "Detected mounted kubeconfig. Patching host endpoint..."
+                            mkdir -p tmp_k8s
+                            cat /root/.kube/config | sed 's/127.0.0.1/host.docker.internal/g' | sed 's/localhost/host.docker.internal/g' > tmp_k8s/kubeconfig
+                            kubectl apply -f k8s/deployment.yaml --kubeconfig=tmp_k8s/kubeconfig
+                            kubectl apply -f k8s/service.yaml --kubeconfig=tmp_k8s/kubeconfig
+                            echo 'Deployment successful! Checking rollouts...'
+                            kubectl rollout status deployment/tourism-website-deployment --timeout=60s --kubeconfig=tmp_k8s/kubeconfig
+                            rm -rf tmp_k8s
+                        else
+                            echo "No mounted kubeconfig found at /root/.kube/config. Trying fallback..."
+                            kubectl apply -f k8s/deployment.yaml
+                            kubectl apply -f k8s/service.yaml
+                            echo 'Deployment successful! Checking rollouts...'
+                            kubectl rollout status deployment/tourism-website-deployment --timeout=60s
+                        fi
+                    '''
                 }
-                echo 'Deployment successful! Checking rollouts...'
-                sh 'kubectl rollout status deployment/tourism-website-deployment --timeout=60s'
             }
         }
     }
