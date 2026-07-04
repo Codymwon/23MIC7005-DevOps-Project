@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Guide - GoExplore</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo">
+      <span>🌏</span> GoExplore
+    </a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="attractions.html">Attractions</a></li>
+        <li><a href="hotels.html">Hotels</a></li>
+        <li><a href="guide.html" class="active">Travel Guide</a></li>
+        <li><a href="map.html">Interactive Map</a></li>
+        <li><a href="booking.html">Book Trip</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <a href="booking.html" class="btn-book">Book Now</a>
+    </div>
+  </header>
+
+  <section class="container">
+    <h2 class="section-title">State Travel Guide</h2>
+    <p class="section-subtitle">Read regional rules, seasonal guidelines, packing necessities, and get answers to common traveler inquiries.</p>
+
+    <div class="grid-2">
+      <!-- Left Column: Travel Guidelines & Table -->
+      <div>
+        <h3 style="font-family: var(--font-display); font-size: 1.8rem; margin-bottom: 1rem;">Best Times to Visit</h3>
+        <p style="color: var(--text-secondary); margin-bottom: 2rem;">Depending on your choice of destination, weather conditions vary across our coastal, mountain, and deep-forest sectors. Review the timeline chart below:</p>
+
+        <div class="glass-panel" style="padding: 1.5rem; overflow-x: auto;">
+          <table style="width: 100%; border-collapse: collapse; text-align: left;">
+            <thead>
+              <tr style="border-bottom: 1px solid var(--glass-border); color: var(--accent-cyan);">
+                <th style="padding: 0.8rem;">Sector</th>
+                <th style="padding: 0.8rem;">Peak Months</th>
+                <th style="padding: 0.8rem;">Average Temp</th>
+                <th style="padding: 0.8rem;">Recommended Outfit</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.03);">
+                <td style="padding: 0.8rem; font-weight: 600;">Coastal</td>
+                <td style="padding: 0.8rem;">Nov - Mar</td>
+                <td style="padding: 0.8rem;">28°C / 82°F</td>
+                <td style="padding: 0.8rem;">Light cotton, beachwear</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.03);">
+                <td style="padding: 0.8rem; font-weight: 600;">Mountain</td>
+                <td style="padding: 0.8rem;">Apr - Jun</td>
+                <td style="padding: 0.8rem;">15°C / 59°F</td>
+                <td style="padding: 0.8rem;">Fleeces, windbreakers</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.03);">
+                <td style="padding: 0.8rem; font-weight: 600;">Forest</td>
+                <td style="padding: 0.8rem;">Sep - Dec</td>
+                <td style="padding: 0.8rem;">22°C / 71°F</td>
+                <td style="padding: 0.8rem;">Cargoes, hiking boots</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 style="font-family: var(--font-display); font-size: 1.8rem; margin-top: 3rem; margin-bottom: 1rem;">Packing Essentials Check</h3>
+        <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Check off items as you load your bags:</p>
+        <div class="glass-panel" style="display: flex; flex-direction: column; gap: 0.8rem; padding: 1.5rem;">
+          <label style="display: flex; align-items: center; gap: 0.8rem; cursor: pointer; text-transform: none; color: var(--text-primary); font-size: 0.95rem;">
+            <input type="checkbox" style="width: auto;"> Valid government identification/passport and visa copies
+          </label>
+          <label style="display: flex; align-items: center; gap: 0.8rem; cursor: pointer; text-transform: none; color: var(--text-primary); font-size: 0.95rem;">
+            <input type="checkbox" style="width: auto;"> Durable trekking shoes and outdoor active wear
+          </label>
+          <label style="display: flex; align-items: center; gap: 0.8rem; cursor: pointer; text-transform: none; color: var(--text-primary); font-size: 0.95rem;">
+            <input type="checkbox" style="width: auto;"> Universal power converter adapter and portable charger
+          </label>
+          <label style="display: flex; align-items: center; gap: 0.8rem; cursor: pointer; text-transform: none; color: var(--text-primary); font-size: 0.95rem;">
+            <input type="checkbox" style="width: auto;"> Essential medications, bandages, and sunscreen lotion
+          </label>
+        </div>
+      </div>
+
+      <!-- Right Column: Accordion FAQs -->
+      <div>
+        <h3 style="font-family: var(--font-display); font-size: 1.8rem; margin-bottom: 1rem;">Frequently Asked Questions</h3>
+        <p style="color: var(--text-secondary); margin-bottom: 2rem;">Quick answers regarding local tour permits, refunds, and transportation options:</p>
+
+        <div class="glass-panel" style="padding: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+          <!-- FAQ Item 1 -->
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Do I need special permits for mountain trails?</span>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              Yes, certain high-altitude peak passes at Solitude Ridge require environmental entry passes. These can be pre-obtained during our check-out booking process.
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>What is the local refund and cancellation policy?</span>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              We offer full refunds for trip cancellations processed at least 72 hours prior to scheduled departure dates. Accommodation refunds are dependent on individual hotel policies.
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Are local transport shuttle facilities provided?</span>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              Yes, all premium and luxury bookings include complimentary airport shuttles and localized daily transfers between your hotel and the attractions.
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Is there 24/7 client booking support available?</span>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              Absolutely. Our cloud-deployed booking backend system guarantees uptime and is constantly supported by our support staff via live chat.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" style="margin-bottom: 1rem;"><span>🌏</span> GoExplore</a>
+        <p>A premier tourism platform delivering smooth bookings and local guidance. Powered by containerized Kubernetes infrastructure.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="attractions.html">Attractions</a></li>
+          <li><a href="hotels.html">Hotels</a></li>
+          <li><a href="map.html">Interactive Map</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>DevOps Infrastructure</h4>
+        <ul>
+          <li><a href="#">Jenkins Builds</a></li>
+          <li><a href="#">Docker Registry</a></li>
+          <li><a href="#">Nagios Health Checks</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 GoExplore Tourism. All rights reserved.</p>
+      <p>DevOps Assignment 2 | Use Case 5</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

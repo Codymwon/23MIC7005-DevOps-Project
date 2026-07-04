@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Travel Map - GoExplore</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo">
+      <span>🌏</span> GoExplore
+    </a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="attractions.html">Attractions</a></li>
+        <li><a href="hotels.html">Hotels</a></li>
+        <li><a href="guide.html">Travel Guide</a></li>
+        <li><a href="map.html" class="active">Interactive Map</a></li>
+        <li><a href="booking.html">Book Trip</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <a href="booking.html" class="btn-book">Book Now</a>
+    </div>
+  </header>
+
+  <section class="container">
+    <h2 class="section-title">Interactive Travel Map</h2>
+    <p class="section-subtitle">Click on any hot spot pin across our regional cartography to view detailed descriptions, photos, and links to direct booking.</p>
+
+    <div class="grid-2" style="align-items: start;">
+      <!-- Left Column: Map Screen -->
+      <div class="map-container">
+        <div class="map-grid-lines"></div>
+        
+        <!-- Pin 1: Coastal (Azure Bay) -->
+        <div class="map-pin" style="top: 30%; left: 25%;" 
+             data-title="Azure Horizon Bay" 
+             data-desc="Scenic coast with turquoise water and smooth golden sand. Top pick for marine diving."
+             data-img="🌊 Ocean Vista Point">
+          <div class="pin-icon"></div>
+          <div class="pin-pulse"></div>
+          <div class="pin-label">Azure Bay</div>
+        </div>
+
+        <!-- Pin 2: Mountain (Peaks) -->
+        <div class="map-pin" style="top: 15%; left: 70%;" 
+             data-title="Elysian Peaks" 
+             data-desc="Misty snowy ridges standing at 3,200m altitude. Features intense hiking trails."
+             data-img="🏔️ Summit Peak Range">
+          <div class="pin-icon" style="background: var(--purple-gradient);"></div>
+          <div class="pin-pulse"></div>
+          <div class="pin-label">Elysian Peaks</div>
+        </div>
+
+        <!-- Pin 3: Heritage (Fortress) -->
+        <div class="map-pin" style="top: 70%; left: 45%;" 
+             data-title="The Citadel of Kings" 
+             data-desc="Deep heritage halls and defense towers showing historical royal weaponry and scriptures."
+             data-img="🏛️ Castle Gates">
+          <div class="pin-icon" style="background: var(--sunset-gradient);"></div>
+          <div class="pin-pulse"></div>
+          <div class="pin-label">The Citadel</div>
+        </div>
+
+        <!-- Pin 4: Forest (Emerald Woods) -->
+        <div class="map-pin" style="top: 55%; left: 80%;" 
+             data-title="Emerald Canopy Woods" 
+             data-desc="Temperate rain forest filled with giant pines, mossy paths, and deep wood stream crossings."
+             data-img="🌲 Forest Trails">
+          <div class="pin-icon" style="background: var(--accent-gradient);"></div>
+          <div class="pin-pulse"></div>
+          <div class="pin-label">Emerald Canopy</div>
+        </div>
+      </div>
+
+      <!-- Right Column: Attraction Information Drawer -->
+      <div class="glass-panel" style="height: 100%; min-height: 500px; display: flex; flex-direction: column;">
+        <h3 style="font-family: var(--font-display); font-size: 1.8rem; margin-bottom: 1rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.8rem; color: var(--accent-cyan);">Destination Inspector</h3>
+        
+        <div id="mapOverlay" style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center; text-align: center; gap: 1.5rem;">
+          <!-- Active view state elements -->
+          <div id="overlayImage" style="height: 180px; width: 100%; background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 3rem;">🗺️</div>
+          <div>
+            <h4 id="overlayTitle" style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 0.5rem;">Select a Pin</h4>
+            <p id="overlayDesc" style="color: var(--text-secondary); max-width: 400px; margin: 0 auto;">Click on any interactive marker pin on the map to explore geographical coordinates, attraction parameters, and images.</p>
+          </div>
+          
+          <div style="margin-top: auto;">
+            <a href="booking.html" class="btn-book" style="display: inline-block;">Proceed to Book Spot</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" style="margin-bottom: 1rem;"><span>🌏</span> GoExplore</a>
+        <p>A premier tourism platform delivering smooth bookings and local guidance. Powered by containerized Kubernetes infrastructure.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="attractions.html">Attractions</a></li>
+          <li><a href="hotels.html">Hotels</a></li>
+          <li><a href="map.html">Interactive Map</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>DevOps Infrastructure</h4>
+        <ul>
+          <li><a href="#">Jenkins Builds</a></li>
+          <li><a href="#">Docker Registry</a></li>
+          <li><a href="#">Nagios Health Checks</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 GoExplore Tourism. All rights reserved.</p>
+      <p>DevOps Assignment 2 | Use Case 5</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

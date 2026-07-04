@@ -1,0 +1,69 @@
+version: '3.8'
+
+services:
+  # Jenkins CI/CD Automation Server
+  jenkins:
+    image: jenkins/jenkins:lts-alpine
+    container_name: devops_jenkins
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins_data:/var/jenkins_home
+      # Mount Docker socket so Jenkins can build images on host
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - JAVA_OPTS=-Djenkins.install.runSetupWizard=true
+
+  # Nagios Continuous Monitoring Server
+  nagios:
+    image: jasonrivers/nagios:latest
+    container_name: devops_nagios
+    restart: unless-stopped
+    ports:
+      - "8081:80"
+    volumes:
+      - nagios_data:/opt/nagios/var
+      - ./nagios/website.cfg:/opt/nagios/etc/objects/website.cfg
+    environment:
+      - NAGIOSADMIN_USER=nagiosadmin
+      - NAGIOSADMIN_NUMPASS=admin123
+      - NAGIOS_TIMEZONE=UTC
+
+  # Graphite Metric Store (Carbon receiver on 2003)
+  graphite:
+    image: graphiteapp/graphite-statsd:latest
+    container_name: devops_graphite
+    restart: unless-stopped
+    ports:
+      - "8082:80"
+      - "2003:2003"
+      - "2004:2004"
+      - "8125:8125/udp"
+      - "8126:8126"
+    volumes:
+      - graphite_storage:/opt/graphite/storage
+      - graphite_conf:/opt/graphite/conf
+
+  # Grafana Dashboard Visualization
+  grafana:
+    image: grafana/grafana:latest
+    container_name: devops_grafana
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    depends_on:
+      - graphite
+
+volumes:
+  jenkins_data:
+  nagios_data:
+  graphite_storage:
+  graphite_conf:
+  grafana_data:

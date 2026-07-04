@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attractions - GoExplore</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo">
+      <span>🌏</span> GoExplore
+    </a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="attractions.html" class="active">Attractions</a></li>
+        <li><a href="hotels.html">Hotels</a></li>
+        <li><a href="guide.html">Travel Guide</a></li>
+        <li><a href="map.html">Interactive Map</a></li>
+        <li><a href="booking.html">Book Trip</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <a href="booking.html" class="btn-book">Book Now</a>
+    </div>
+  </header>
+
+  <section class="container">
+    <h2 class="section-title">Major Tourism Attractions</h2>
+    <p class="section-subtitle">Filter by geographical category to discover coastal escapes, majestic mountains, historical architectures, or wildlife retreats.</p>
+    
+    <!-- Filter Controls -->
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All Destinations</button>
+      <button class="filter-btn" data-filter="coastal">Coastal Shorelines</button>
+      <button class="filter-btn" data-filter="mountain">Mountain Trails</button>
+      <button class="filter-btn" data-filter="heritage">Heritage Sites</button>
+      <button class="filter-btn" data-filter="forest">Lush Forests</button>
+    </div>
+
+    <!-- Attractions Grid -->
+    <div class="grid-3">
+      <!-- Card 1 (Coastal) -->
+      <div class="glass-panel card" data-category="coastal">
+        <div class="card-img-placeholder">🌊 Coastal Shore</div>
+        <span class="card-badge">Coastal</span>
+        <div class="card-content">
+          <h3>Azure Horizon Bay</h3>
+          <p>A tranquil stretch of golden sand and turquoise waters. Perfect for swimming, diving, and sunset gazing.</p>
+          <div class="card-footer">
+            <span>Difficulty: Easy</span>
+            <a href="booking.html?dest=coastal" class="card-link">Book trip &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 (Mountain) -->
+      <div class="glass-panel card" data-category="mountain">
+        <div class="card-img-placeholder">🏔️ Mist Mountains</div>
+        <span class="card-badge">Mountain</span>
+        <div class="card-content">
+          <h3>Elysian Peaks</h3>
+          <p>Snow-draped ranges and high-altitude hiking trails suitable for seasoned trekkers looking for scenic vistas.</p>
+          <div class="card-footer">
+            <span>Difficulty: Hard</span>
+            <a href="booking.html?dest=mountain" class="card-link">Book trip &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 (Heritage) -->
+      <div class="glass-panel card" data-category="heritage">
+        <div class="card-img-placeholder">🏛️ Heritage Castle</div>
+        <span class="card-badge">Heritage</span>
+        <div class="card-content">
+          <h3>The Citadel of Kings</h3>
+          <p>A centuries-old stone fortress displaying majestic royal halls, ancient weaponry, and hand-painted relics.</p>
+          <div class="card-footer">
+            <span>Duration: 4 Hrs</span>
+            <a href="booking.html?dest=heritage" class="card-link">Book trip &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 (Forest) -->
+      <div class="glass-panel card" data-category="forest">
+        <div class="card-img-placeholder">🌲 Green Wood Canopy</div>
+        <span class="card-badge">Forest</span>
+        <div class="card-content">
+          <h3>Emerald Canopy Woods</h3>
+          <p>A dense temperate forest packed with diverse bird species, wild orchids, and peaceful stream crossings.</p>
+          <div class="card-footer">
+            <span>Difficulty: Medium</span>
+            <a href="booking.html?dest=forest" class="card-link">Book trip &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 (Coastal) -->
+      <div class="glass-panel card" data-category="coastal">
+        <div class="card-img-placeholder">🐚 Shell Coast</div>
+        <span class="card-badge">Coastal</span>
+        <div class="card-content">
+          <h3>Whispering Shell Cove</h3>
+          <p>Famous for thousands of exotic seashells washing ashore daily. Features private eco-lodges along the coast.</p>
+          <div class="card-footer">
+            <span>Difficulty: Easy</span>
+            <a href="booking.html?dest=coastal" class="card-link">Book trip &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 (Mountain) -->
+      <div class="glass-panel card" data-category="mountain">
+        <div class="card-img-placeholder">🌋 Volcano Valley</div>
+        <span class="card-badge">Mountain</span>
+        <div class="card-content">
+          <h3>Solitude Ridge Valley</h3>
+          <p>Misty plateaus overlooking active steam springs and beautiful mountain ridges with local tea stalls.</p>
+          <div class="card-footer">
+            <span>Difficulty: Medium</span>
+            <a href="booking.html?dest=mountain" class="card-link">Book trip &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" style="margin-bottom: 1rem;"><span>🌏</span> GoExplore</a>
+        <p>A premier tourism platform delivering smooth bookings and local guidance. Powered by containerized Kubernetes infrastructure.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="attractions.html">Attractions</a></li>
+          <li><a href="hotels.html">Hotels</a></li>
+          <li><a href="map.html">Interactive Map</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>DevOps Infrastructure</h4>
+        <ul>
+          <li><a href="#">Jenkins Builds</a></li>
+          <li><a href="#">Docker Registry</a></li>
+          <li><a href="#">Nagios Health Checks</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 GoExplore Tourism. All rights reserved.</p>
+      <p>DevOps Assignment 2 | Use Case 5</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

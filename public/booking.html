@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Your Tour - GoExplore</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo">
+      <span>🌏</span> GoExplore
+    </a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="attractions.html">Attractions</a></li>
+        <li><a href="hotels.html">Hotels</a></li>
+        <li><a href="guide.html">Travel Guide</a></li>
+        <li><a href="map.html">Interactive Map</a></li>
+        <li><a href="booking.html" class="active">Book Trip</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <a href="booking.html" class="btn-book">Book Now</a>
+    </div>
+  </header>
+
+  <section class="container">
+    <h2 class="section-title">Travel Booking Portal</h2>
+    <p class="section-subtitle">Calculate real-time pricing for tickets and lodging accommodations. Complete your credentials to trigger confirmation.</p>
+
+    <!-- Success Toast Alert -->
+    <div id="bookingSuccess" class="glass-panel" style="display: none; background: rgba(0, 242, 254, 0.1); border-color: var(--accent-cyan); margin-bottom: 2rem; text-align: center; color: var(--accent-cyan);">
+      <h3 style="font-family: var(--font-display); margin-bottom: 0.5rem;">🎉 Booking Request Submitted!</h3>
+      <p style="color: var(--text-primary);">Your reservation has been recorded successfully. Our automated backend is processing your tickets.</p>
+    </div>
+
+    <div class="grid-2">
+      <!-- Left Column: Form -->
+      <div class="glass-panel">
+        <h3 style="font-family: var(--font-display); font-size: 1.6rem; margin-bottom: 1.5rem;">Reserve Tour Tickets</h3>
+        
+        <form id="bookingForm">
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" placeholder="John Doe" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="john@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="destination">Target Destination</label>
+            <select id="destination" required>
+              <option value="coastal">Azure Horizon Bay (Coastal) - $150/day</option>
+              <option value="mountain">Elysian Peaks (Mountain) - $200/day</option>
+              <option value="heritage">Citadel of Kings (Heritage) - $180/day</option>
+              <option value="forest">Emerald Canopy Woods (Forest) - $220/day</option>
+            </select>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label for="guests">Number of Guests</label>
+              <input type="number" id="guests" min="1" max="10" value="1" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="duration">Duration (Days)</label>
+              <input type="number" id="duration" min="1" max="30" value="3" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="hotelClass">Hotel Accommodation Level</label>
+            <select id="hotelClass" required>
+              <option value="budget">Budget Lodging (Base multiplier)</option>
+              <option value="standard">Standard Class (1.5x multiplier)</option>
+              <option value="luxury">Luxury Suites (2.5x multiplier)</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn-book" style="width: 100%; margin-top: 1rem; padding: 0.9rem;">Confirm Reservation</button>
+        </form>
+      </div>
+
+      <!-- Right Column: Live Price Calculator Summary -->
+      <div class="glass-panel" style="display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <h3 style="font-family: var(--font-display); font-size: 1.6rem; margin-bottom: 1.5rem; color: var(--accent-cyan);">Live Cost Summary</h3>
+          <p style="color: var(--text-secondary); margin-bottom: 2rem;">Adjust the inputs in the booking form on the left to see instant calculations of ticket prices and lodging fees.</p>
+
+          <div class="booking-summary">
+            <div class="summary-row">
+              <span>Selected Route:</span>
+              <span id="sumDest" style="font-weight: 600; color: var(--text-primary);">--</span>
+            </div>
+            <div class="summary-row">
+              <span>Tour Tickets Cost:</span>
+              <span id="sumBase" style="font-weight: 600; color: var(--text-primary);">$0.00</span>
+            </div>
+            <div class="summary-row">
+              <span>Accommodation Fees:</span>
+              <span id="sumHotel" style="font-weight: 600; color: var(--text-primary);">$0.00</span>
+            </div>
+            <div class="summary-row total">
+              <span>Estimated Total:</span>
+              <span id="sumTotal">$0.00</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-top: 1px solid var(--glass-border); padding-top: 1.5rem; margin-top: 2rem; font-size: 0.85rem; color: var(--text-muted);">
+          <p>⚠️ Rates calculated are based on standard seasonal tariffs. Local tourism taxes of 5% will be applied during final checkout.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" style="margin-bottom: 1rem;"><span>🌏</span> GoExplore</a>
+        <p>A premier tourism platform delivering smooth bookings and local guidance. Powered by containerized Kubernetes infrastructure.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="attractions.html">Attractions</a></li>
+          <li><a href="hotels.html">Hotels</a></li>
+          <li><a href="map.html">Interactive Map</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>DevOps Infrastructure</h4>
+        <ul>
+          <li><a href="#">Jenkins Builds</a></li>
+          <li><a href="#">Docker Registry</a></li>
+          <li><a href="#">Nagios Health Checks</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 GoExplore Tourism. All rights reserved.</p>
+      <p>DevOps Assignment 2 | Use Case 5</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

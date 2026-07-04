@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotels & Lodges - GoExplore</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo">
+      <span>🌏</span> GoExplore
+    </a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="attractions.html">Attractions</a></li>
+        <li><a href="hotels.html" class="active">Hotels</a></li>
+        <li><a href="guide.html">Travel Guide</a></li>
+        <li><a href="map.html">Interactive Map</a></li>
+        <li><a href="booking.html">Book Trip</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <a href="booking.html" class="btn-book">Book Now</a>
+    </div>
+  </header>
+
+  <section class="container">
+    <h2 class="section-title">Premium Accommodation</h2>
+    <p class="section-subtitle">Find hotels, eco-lodges, and homestays that fit your style and budget. Filter below to explore details.</p>
+
+    <!-- Hotel Filters -->
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All Accommodations</button>
+      <button class="filter-btn" data-filter="luxury">Luxury Suites</button>
+      <button class="filter-btn" data-filter="standard">Standard Class</button>
+      <button class="filter-btn" data-filter="budget">Budget Lodging</button>
+    </div>
+
+    <!-- Hotels Catalog -->
+    <div class="grid-3">
+      <!-- Hotel 1 (Luxury) -->
+      <div class="glass-panel card" data-category="luxury">
+        <div class="card-img-placeholder" style="background: linear-gradient(45deg, #1c1335 0%, #351a5c 100%);">🏨 Grand Horizon Resort</div>
+        <span class="card-badge">Luxury Resort</span>
+        <div class="card-content">
+          <h3>Grand Horizon Ocean Resort</h3>
+          <p>Overlooking the Azure Horizon Bay. Includes infinity pools, premium spas, 5-star fine dining, and private beach lounges.</p>
+          <div class="card-footer">
+            <span style="color: #ffd700;">★★★★★ 5.0</span>
+            <span style="font-weight: 700; color: var(--accent-cyan);">$350/Night</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hotel 2 (Budget) -->
+      <div class="glass-panel card" data-category="budget">
+        <div class="card-img-placeholder" style="background: linear-gradient(45deg, #0f201d 0%, #153c35 100%);">⛺ Backpacker Haven</div>
+        <span class="card-badge">Budget Hostel</span>
+        <div class="card-content">
+          <h3>Backpacker Haven Cove</h3>
+          <p>Clean, sociable bunk rooms and shared lounges located close to coastal trails and restaurants. Free high-speed Wi-Fi.</p>
+          <div class="card-footer">
+            <span style="color: #ffd700;">★★★★☆ 4.2</span>
+            <span style="font-weight: 700; color: var(--accent-cyan);">$45/Night</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hotel 3 (Standard) -->
+      <div class="glass-panel card" data-category="standard">
+        <div class="card-img-placeholder" style="background: linear-gradient(45deg, #191b2c 0%, #292d4c 100%);">🏢 Pine Ridge Hotel</div>
+        <span class="card-badge">Standard Hotel</span>
+        <div class="card-content">
+          <h3>Pine Ridge Alpine Lodge</h3>
+          <p>Rustic, cozy suites situated at the base of Elysian Peaks. Features log wood fireplace rooms and local cuisine dining.</p>
+          <div class="card-footer">
+            <span style="color: #ffd700;">★★★★☆ 4.5</span>
+            <span style="font-weight: 700; color: var(--accent-cyan);">$120/Night</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hotel 4 (Luxury) -->
+      <div class="glass-panel card" data-category="luxury">
+        <div class="card-img-placeholder" style="background: linear-gradient(45deg, #3d1425 0%, #681f3e 100%);">🏰 Castle Chambers</div>
+        <span class="card-badge">Heritage Luxury</span>
+        <div class="card-content">
+          <h3>Royal Citadel Heritage Hotel</h3>
+          <p>Dwell inside the historically preserved wing of the ancient castle. Enjoy authentic royal treatments and vintage decor.</p>
+          <div class="card-footer">
+            <span style="color: #ffd700;">★★★★★ 4.9</span>
+            <span style="font-weight: 700; color: var(--accent-cyan);">$290/Night</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hotel 5 (Budget) -->
+      <div class="glass-panel card" data-category="budget">
+        <div class="card-img-placeholder" style="background: linear-gradient(45deg, #17181c 0%, #2f323a 100%);">🏡 Forest Homestay</div>
+        <span class="card-badge">Eco Homestay</span>
+        <div class="card-content">
+          <h3>Eco Canopy Guesthouse</h3>
+          <p>Quiet wooden chalets built inside the fringe of Emerald Canopy Woods. Provides locally farmed, organic breakfast.</p>
+          <div class="card-footer">
+            <span style="color: #ffd700;">★★★★☆ 4.4</span>
+            <span style="font-weight: 700; color: var(--accent-cyan);">$65/Night</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" style="margin-bottom: 1rem;"><span>🌏</span> GoExplore</a>
+        <p>A premier tourism platform delivering smooth bookings and local guidance. Powered by containerized Kubernetes infrastructure.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="attractions.html">Attractions</a></li>
+          <li><a href="hotels.html">Hotels</a></li>
+          <li><a href="map.html">Interactive Map</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>DevOps Infrastructure</h4>
+        <ul>
+          <li><a href="#">Jenkins Builds</a></li>
+          <li><a href="#">Docker Registry</a></li>
+          <li><a href="#">Nagios Health Checks</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 GoExplore Tourism. All rights reserved.</p>
+      <p>DevOps Assignment 2 | Use Case 5</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
