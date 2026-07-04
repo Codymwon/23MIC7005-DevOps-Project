@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Attractions - GoExplore</title>
+  <title>Attractions Directory - GoExplore</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
   <header>
     <a href="index.html" class="logo">
-      <span>🌏</span> GoExplore
+      GoExplore <span class="logo-dot"></span>
     </a>
     <nav>
       <ul>
@@ -28,100 +28,101 @@
   </header>
 
   <section class="container">
-    <h2 class="section-title">Major Tourism Attractions</h2>
-    <p class="section-subtitle">Filter by geographical category to discover coastal escapes, majestic mountains, historical architectures, or wildlife retreats.</p>
+    <div class="section-label">Coordinates Catalog</div>
+    <h2 class="section-title">Regional Preserves</h2>
+    <p class="section-subtitle">Use the category filters below to explore documented coastal reserves, alpine hiking trails, ancient castles, and forest sanctuaries.</p>
     
     <!-- Filter Controls -->
     <div class="filter-bar">
-      <button class="filter-btn active" data-filter="all">All Destinations</button>
-      <button class="filter-btn" data-filter="coastal">Coastal Shorelines</button>
-      <button class="filter-btn" data-filter="mountain">Mountain Trails</button>
+      <button class="filter-btn active" data-filter="all">All Preserves</button>
+      <button class="filter-btn" data-filter="coastal">Coastal Reserves</button>
+      <button class="filter-btn" data-filter="mountain">Alpine Trails</button>
       <button class="filter-btn" data-filter="heritage">Heritage Sites</button>
-      <button class="filter-btn" data-filter="forest">Lush Forests</button>
+      <button class="filter-btn" data-filter="forest">Protected Forests</button>
     </div>
 
     <!-- Attractions Grid -->
     <div class="grid-3">
       <!-- Card 1 (Coastal) -->
-      <div class="glass-panel card" data-category="coastal">
-        <div class="card-img-placeholder">🌊 Coastal Shore</div>
-        <span class="card-badge">Coastal</span>
+      <div class="card" data-category="coastal">
+        <div class="card-img-placeholder">Azure Horizon Bay</div>
+        <span class="card-tag">Coastal</span>
         <div class="card-content">
           <h3>Azure Horizon Bay</h3>
-          <p>A tranquil stretch of golden sand and turquoise waters. Perfect for swimming, diving, and sunset gazing.</p>
+          <p>A tranquil shoreline stretch of golden sands and marine preserve waters, suitable for swimming and low-impact coastal exploration.</p>
           <div class="card-footer">
             <span>Difficulty: Easy</span>
-            <a href="booking.html?dest=coastal" class="card-link">Book trip &rarr;</a>
+            <a href="booking.html?dest=coastal" class="card-link">Reserve &rarr;</a>
           </div>
         </div>
       </div>
 
       <!-- Card 2 (Mountain) -->
-      <div class="glass-panel card" data-category="mountain">
-        <div class="card-img-placeholder">🏔️ Mist Mountains</div>
-        <span class="card-badge">Mountain</span>
+      <div class="card" data-category="mountain">
+        <div class="card-img-placeholder">Elysian Peaks</div>
+        <span class="card-tag">Alpine</span>
         <div class="card-content">
           <h3>Elysian Peaks</h3>
-          <p>Snow-draped ranges and high-altitude hiking trails suitable for seasoned trekkers looking for scenic vistas.</p>
+          <p>High-altitude alpine ridges standing at 3,200m. Suitable for experienced trekkers looking for scenic mountain vistas.</p>
           <div class="card-footer">
             <span>Difficulty: Hard</span>
-            <a href="booking.html?dest=mountain" class="card-link">Book trip &rarr;</a>
+            <a href="booking.html?dest=mountain" class="card-link">Reserve &rarr;</a>
           </div>
         </div>
       </div>
 
       <!-- Card 3 (Heritage) -->
-      <div class="glass-panel card" data-category="heritage">
-        <div class="card-img-placeholder">🏛️ Heritage Castle</div>
-        <span class="card-badge">Heritage</span>
+      <div class="card" data-category="heritage">
+        <div class="card-img-placeholder">Citadel of Kings</div>
+        <span class="card-tag">Heritage</span>
         <div class="card-content">
           <h3>The Citadel of Kings</h3>
-          <p>A centuries-old stone fortress displaying majestic royal halls, ancient weaponry, and hand-painted relics.</p>
+          <p>A stone fortress showcasing historical royal chambers, structural vaulting, and pre-modern artifact halls.</p>
           <div class="card-footer">
-            <span>Duration: 4 Hrs</span>
-            <a href="booking.html?dest=heritage" class="card-link">Book trip &rarr;</a>
+            <span>Est. Visit: 4 Hrs</span>
+            <a href="booking.html?dest=heritage" class="card-link">Reserve &rarr;</a>
           </div>
         </div>
       </div>
 
       <!-- Card 4 (Forest) -->
-      <div class="glass-panel card" data-category="forest">
-        <div class="card-img-placeholder">🌲 Green Wood Canopy</div>
-        <span class="card-badge">Forest</span>
+      <div class="card" data-category="forest">
+        <div class="card-img-placeholder">Emerald Canopy Woods</div>
+        <span class="card-tag">Forest</span>
         <div class="card-content">
           <h3>Emerald Canopy Woods</h3>
-          <p>A dense temperate forest packed with diverse bird species, wild orchids, and peaceful stream crossings.</p>
+          <p>A protected temperate woodland ecosystem featuring stream crossings, pine canopies, and birdwatching trails.</p>
           <div class="card-footer">
             <span>Difficulty: Medium</span>
-            <a href="booking.html?dest=forest" class="card-link">Book trip &rarr;</a>
+            <a href="booking.html?dest=forest" class="card-link">Reserve &rarr;</a>
           </div>
         </div>
       </div>
 
       <!-- Card 5 (Coastal) -->
-      <div class="glass-panel card" data-category="coastal">
-        <div class="card-img-placeholder">🐚 Shell Coast</div>
-        <span class="card-badge">Coastal</span>
+      <div class="card" data-category="coastal">
+        <div class="card-img-placeholder">Whispering Shell Cove</div>
+        <span class="card-tag">Coastal</span>
         <div class="card-content">
           <h3>Whispering Shell Cove</h3>
-          <p>Famous for thousands of exotic seashells washing ashore daily. Features private eco-lodges along the coast.</p>
+          <p>An isolated geological bay known for rare shell deposits and minimal wind conditions. Perfect for silent kayaking.</p>
           <div class="card-footer">
             <span>Difficulty: Easy</span>
-            <a href="booking.html?dest=coastal" class="card-link">Book trip &rarr;</a>
+            <a href="booking.html?dest=coastal" class="card-link">Reserve &rarr;</a>
           </div>
         </div>
       </div>
 
       <!-- Card 6 (Mountain) -->
-      <div class="glass-panel card" data-category="mountain">
-        <div class="card-img-placeholder">🌋 Volcano Valley</div>
-        <span class="card-badge">Mountain</span>
+      <div class="card" data-category="mountain">
+        <div class="card-img-placeholder">Solitude Ridge Valley</div>
+        <span class="card-tag">Alpine</span>
         <div class="card-content">
           <h3>Solitude Ridge Valley</h3>
-          <p>Misty plateaus overlooking active steam springs and beautiful mountain ridges with local tea stalls.</p>
+          <p>A scenic valley plateau featuring thermal springs and direct paths to the base camp of Elysian Peaks.</p>
           <div class="card-footer">
             <span>Difficulty: Medium</span>
-            <a href="booking.html?dest=mountain" class="card-link">Book trip &rarr;</a>
+            <a href="booking.html?dest=mountain" class="card-link">Reserve &rarr;</a>
           </div>
         </div>
       </div>
@@ -131,8 +132,8 @@
   <footer>
     <div class="footer-content">
       <div class="footer-brand">
-        <a href="index.html" class="logo" style="margin-bottom: 1rem;"><span>🌏</span> GoExplore</a>
-        <p>A premier tourism platform delivering smooth bookings and local guidance. Powered by containerized Kubernetes infrastructure.</p>
+        <a href="index.html" class="logo">GoExplore <span class="logo-dot"></span></a>
+        <p>A regional directory resource providing travel details, interactive coordinates mapping, and accommodation logging.</p>
       </div>
       <div class="footer-links">
         <h4>Explore</h4>
@@ -143,11 +144,11 @@
         </ul>
       </div>
       <div class="footer-links">
-        <h4>DevOps Infrastructure</h4>
+        <h4>DevOps Status</h4>
         <ul>
-          <li><a href="#">Jenkins Builds</a></li>
+          <li><a href="#">Jenkins Node</a></li>
           <li><a href="#">Docker Registry</a></li>
-          <li><a href="#">Nagios Health Checks</a></li>
+          <li><a href="#">Nagios Availability</a></li>
         </ul>
       </div>
     </div>

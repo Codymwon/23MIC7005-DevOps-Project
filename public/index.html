@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GoExplore - Tourism Information Website</title>
+  <title>GoExplore - Travel Preserves & Lodging Directory</title>
   <meta name="description" content="Explore state attractions, premium hotels, maps, and book your next vacation seamlessly.">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -12,7 +12,7 @@
   <!-- Header Section -->
   <header>
     <a href="index.html" class="logo">
-      <span>🌏</span> GoExplore
+      GoExplore <span class="logo-dot"></span>
     </a>
     <nav>
       <ul>
@@ -31,45 +31,52 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-badge">Welcome to Your Next Adventure</div>
-    <h1>Unveil the Mysteries of the <span>Hidden Paradise</span></h1>
-    <p>Discover pristine coastal shorelines, historical wonders, lush green forests, and misty mountain heights with our comprehensive tourism guide.</p>
-    <div style="display: flex; gap: 1rem;">
-      <a href="attractions.html" class="btn-book" style="background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: var(--text-primary); box-shadow: none;">Explore Attractions</a>
-      <a href="booking.html" class="btn-book">Plan Your Trip</a>
+    <div class="hero-subtitle">Editorial Travel Guide</div>
+    <h1>Curated regional directories for the <span>discerning explorer</span></h1>
+    <p>Discover pristine coastal reserves, mist-laden alpine trails, historical architecture corridors, and protected national forests with our structured guidance.</p>
+    <div class="hero-actions">
+      <a href="attractions.html" class="btn-book" style="border-color: var(--border-light); color: var(--text-main);">View Attractions</a>
+      <a href="booking.html" class="btn-book">Book Reservation</a>
     </div>
   </section>
 
   <!-- Highlight Grid -->
   <section class="container">
-    <h2 class="section-title">Why Travel With Us?</h2>
-    <p class="section-subtitle">We design journeys that stay with you forever, supported by active local guides and automated booking.</p>
+    <div class="section-label">Features</div>
+    <h2 class="section-title">Designed for Discerning Travelers</h2>
+    <p class="section-subtitle">We list selected local coordinates and certified accommodations to ensure your journey is meaningful and highly structured.</p>
     
     <div class="grid-3">
-      <div class="glass-panel card">
-        <div class="card-icon">🌊</div>
-        <h3>Curated Destinies</h3>
-        <p>From sun-soaked beaches to high mountain trails, we handpick destinations offering authentic cultural and natural experiences.</p>
+      <div class="card">
+        <div class="card-content">
+          <div class="card-icon-container">01</div>
+          <h3>Selected Preserves</h3>
+          <p>From silent shorelines to historical ruins, we document places offering authentic regional history and local cultural insights.</p>
+        </div>
       </div>
-      <div class="glass-panel card">
-        <div class="card-icon">🏛️</div>
-        <h3>Rich Heritage Guides</h3>
-        <p>Learn historical insights, regional anecdotes, and enjoy local interactions with our custom audio-guided travel maps.</p>
+      <div class="card">
+        <div class="card-content">
+          <div class="card-icon-container">02</div>
+          <h3>Liaison Accommodations</h3>
+          <p>Read detailed classifications of budget hostels, standard alpine lodges, and premium luxury suites near each destination preserve.</p>
+        </div>
       </div>
-      <div class="glass-panel card">
-        <div class="card-icon">🛡️</div>
-        <h3>High Availability Services</h3>
-        <p>Continuous DevOps deployment ensures zero-downtime booking status updates. We are monitored 24/7 for security and speed.</p>
+      <div class="card">
+        <div class="card-content">
+          <div class="card-icon-container">03</div>
+          <h3>Uptime Infrastructure</h3>
+          <p>Continuous pipeline checks and local containerized hosting ensure our reservation booking records are updated with high availability.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Call to Action Section -->
   <section class="container" style="padding-top: 0;">
-    <div class="glass-panel" style="background: linear-gradient(135deg, rgba(79,172,254,0.05) 0%, rgba(0,242,254,0.05) 100%); text-align: center; border-color: rgba(0, 242, 254, 0.2); padding: 4rem 2rem;">
-      <h2 style="font-family: var(--font-display); font-size: 2.2rem; margin-bottom: 1rem;">Ready to experience a journey of a lifetime?</h2>
-      <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 2rem auto;">Book directly online using our live pricing calculator, customize your accommodation level, and receive instant confirmation.</p>
-      <a href="booking.html" class="btn-book">Proceed to Booking Portal</a>
+    <div style="border: 1px solid var(--accent-gold); border-radius: var(--radius-md); background: rgba(197, 168, 128, 0.02); text-align: center; padding: 5rem 2rem;">
+      <h2 style="font-family: var(--font-serif); font-size: 2.5rem; font-weight: 400; margin-bottom: 1rem;">Begin Your Reservation</h2>
+      <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 300; font-size: 1.05rem;">Calculate travel tariffs, adjust accommodation levels dynamically, and submit booking requests through our local directory interface.</p>
+      <a href="booking.html" class="btn-book">Open Booking Portal</a>
     </div>
   </section>
 
@@ -77,8 +84,8 @@
   <footer>
     <div class="footer-content">
       <div class="footer-brand">
-        <a href="index.html" class="logo" style="margin-bottom: 1rem;"><span>🌏</span> GoExplore</a>
-        <p>A premier tourism platform delivering smooth bookings and local guidance. Powered by containerized Kubernetes infrastructure.</p>
+        <a href="index.html" class="logo">GoExplore <span class="logo-dot"></span></a>
+        <p>A regional directory resource providing travel details, interactive coordinates mapping, and accommodation logging.</p>
       </div>
       <div class="footer-links">
         <h4>Explore</h4>
@@ -89,11 +96,11 @@
         </ul>
       </div>
       <div class="footer-links">
-        <h4>DevOps Infrastructure</h4>
+        <h4>DevOps Status</h4>
         <ul>
-          <li><a href="#">Jenkins Builds</a></li>
+          <li><a href="#">Jenkins Node</a></li>
           <li><a href="#">Docker Registry</a></li>
-          <li><a href="#">Nagios Health Checks</a></li>
+          <li><a href="#">Nagios Availability</a></li>
         </ul>
       </div>
     </div>

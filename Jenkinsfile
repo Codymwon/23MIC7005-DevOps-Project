@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_REGISTRY_USER = 'your_dockerhub_username'
+        DOCKER_REGISTRY_USER = 'aadiii9'
         IMAGE_NAME           = 'tourism-website'
         IMAGE_TAG            = "${BUILD_NUMBER}"
         KUBECONFIG_CRED      = 'kubeconfig-credentials-id'
@@ -60,12 +60,15 @@ pipeline {
         stage('Docker Push (Optional)') {
             steps {
                 echo 'Pushing Docker Image to Docker Hub...'
-                // If credentials are configured, we login and push
                 script {
-                    withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
-                        sh "echo ${DOCKER_PASS} | docker login -u ${DOCKER_USER} --password-stdin"
-                        sh "docker push ${DOCKER_REGISTRY_USER}/${IMAGE_NAME}:${IMAGE_TAG}"
-                        sh "docker push ${DOCKER_REGISTRY_USER}/${IMAGE_NAME}:latest"
+                    try {
+                        withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
+                            sh "echo ${DOCKER_PASS} | docker login -u ${DOCKER_USER} --password-stdin"
+                            sh "docker push ${DOCKER_REGISTRY_USER}/${IMAGE_NAME}:${IMAGE_TAG}"
+                            sh "docker push ${DOCKER_REGISTRY_USER}/${IMAGE_NAME}:latest"
+                        }
+                    } catch (Exception e) {
+                        echo "Docker Hub credentials not configured. Skipping image push step..."
                     }
                 }
             }

@@ -10,7 +10,7 @@
 
   <header>
     <a href="index.html" class="logo">
-      <span>🌏</span> GoExplore
+      GoExplore <span class="logo-dot"></span>
     </a>
     <nav>
       <ul>
@@ -28,113 +28,103 @@
   </header>
 
   <section class="container">
-    <h2 class="section-title">State Travel Guide</h2>
-    <p class="section-subtitle">Read regional rules, seasonal guidelines, packing necessities, and get answers to common traveler inquiries.</p>
+    <div class="section-label">Travel Guide</div>
+    <h2 class="section-title">Regional Parameters</h2>
+    <p class="section-subtitle">Important schedules, packing requirements, and answers to common inquiries regarding regional preserve visits.</p>
 
     <div class="grid-2">
       <!-- Left Column: Travel Guidelines & Table -->
       <div>
-        <h3 style="font-family: var(--font-display); font-size: 1.8rem; margin-bottom: 1rem;">Best Times to Visit</h3>
-        <p style="color: var(--text-secondary); margin-bottom: 2rem;">Depending on your choice of destination, weather conditions vary across our coastal, mountain, and deep-forest sectors. Review the timeline chart below:</p>
+        <h3 style="font-family: var(--font-serif); font-size: 1.8rem; font-weight: 400; margin-bottom: 1.5rem;">Recommended Seasons</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem; font-weight: 300; margin-bottom: 2rem;">Depending on your choice of destination, weather parameters vary significantly across our coastal, alpine, and forest sectors.</p>
 
-        <div class="glass-panel" style="padding: 1.5rem; overflow-x: auto;">
-          <table style="width: 100%; border-collapse: collapse; text-align: left;">
+        <div style="border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 1.5rem; background: var(--bg-card); overflow-x: auto;">
+          <table>
             <thead>
-              <tr style="border-bottom: 1px solid var(--glass-border); color: var(--accent-cyan);">
-                <th style="padding: 0.8rem;">Sector</th>
-                <th style="padding: 0.8rem;">Peak Months</th>
-                <th style="padding: 0.8rem;">Average Temp</th>
-                <th style="padding: 0.8rem;">Recommended Outfit</th>
+              <tr>
+                <th>Sector</th>
+                <th>Peak Months</th>
+                <th>Avg. Temp</th>
+                <th>Outfit Guide</th>
               </tr>
             </thead>
             <tbody>
-              <tr style="border-bottom: 1px solid rgba(255,255,255,0.03);">
-                <td style="padding: 0.8rem; font-weight: 600;">Coastal</td>
-                <td style="padding: 0.8rem;">Nov - Mar</td>
-                <td style="padding: 0.8rem;">28°C / 82°F</td>
-                <td style="padding: 0.8rem;">Light cotton, beachwear</td>
+              <tr>
+                <td style="font-weight: 500; color: var(--text-main);">Coastal</td>
+                <td>Nov - Mar</td>
+                <td>28°C / 82°F</td>
+                <td>Light cotton layers</td>
               </tr>
-              <tr style="border-bottom: 1px solid rgba(255,255,255,0.03);">
-                <td style="padding: 0.8rem; font-weight: 600;">Mountain</td>
-                <td style="padding: 0.8rem;">Apr - Jun</td>
-                <td style="padding: 0.8rem;">15°C / 59°F</td>
-                <td style="padding: 0.8rem;">Fleeces, windbreakers</td>
+              <tr>
+                <td style="font-weight: 500; color: var(--text-main);">Alpine</td>
+                <td>Apr - Jun</td>
+                <td>15°C / 59°F</td>
+                <td>Thermal jackets, boots</td>
               </tr>
-              <tr style="border-bottom: 1px solid rgba(255,255,255,0.03);">
-                <td style="padding: 0.8rem; font-weight: 600;">Forest</td>
-                <td style="padding: 0.8rem;">Sep - Dec</td>
-                <td style="padding: 0.8rem;">22°C / 71°F</td>
-                <td style="padding: 0.8rem;">Cargoes, hiking boots</td>
+              <tr>
+                <td style="font-weight: 500; color: var(--text-main);">Forest</td>
+                <td>Sep - Dec</td>
+                <td>22°C / 71°F</td>
+                <td>Cargo wear, trail shoes</td>
               </tr>
             </tbody>
           </table>
         </div>
 
-        <h3 style="font-family: var(--font-display); font-size: 1.8rem; margin-top: 3rem; margin-bottom: 1rem;">Packing Essentials Check</h3>
-        <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Check off items as you load your bags:</p>
-        <div class="glass-panel" style="display: flex; flex-direction: column; gap: 0.8rem; padding: 1.5rem;">
-          <label style="display: flex; align-items: center; gap: 0.8rem; cursor: pointer; text-transform: none; color: var(--text-primary); font-size: 0.95rem;">
-            <input type="checkbox" style="width: auto;"> Valid government identification/passport and visa copies
+        <h3 style="font-family: var(--font-serif); font-size: 1.8rem; font-weight: 400; margin-top: 3.5rem; margin-bottom: 1.5rem;">Packing Checklist</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem; font-weight: 300; margin-bottom: 1.5rem;">Select items as you prepare for departure:</p>
+        <div style="border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 2rem; background: var(--bg-card); display: flex; flex-direction: column; gap: 1.2rem;">
+          <label style="display: flex; align-items: center; gap: 1rem; cursor: pointer; text-transform: none; color: var(--text-main); font-size: 0.9rem; font-weight: 400;">
+            <input type="checkbox" style="width: auto; border: none; border-bottom: none;"> Valid passport and regional visa documentation
           </label>
-          <label style="display: flex; align-items: center; gap: 0.8rem; cursor: pointer; text-transform: none; color: var(--text-primary); font-size: 0.95rem;">
-            <input type="checkbox" style="width: auto;"> Durable trekking shoes and outdoor active wear
+          <label style="display: flex; align-items: center; gap: 1rem; cursor: pointer; text-transform: none; color: var(--text-main); font-size: 0.9rem; font-weight: 400;">
+            <input type="checkbox" style="width: auto; border: none; border-bottom: none;"> Trail-compliant hiking footwear and windbreakers
           </label>
-          <label style="display: flex; align-items: center; gap: 0.8rem; cursor: pointer; text-transform: none; color: var(--text-primary); font-size: 0.95rem;">
-            <input type="checkbox" style="width: auto;"> Universal power converter adapter and portable charger
+          <label style="display: flex; align-items: center; gap: 1rem; cursor: pointer; text-transform: none; color: var(--text-main); font-size: 0.9rem; font-weight: 400;">
+            <input type="checkbox" style="width: auto; border: none; border-bottom: none;"> Universal power socket adapters
           </label>
-          <label style="display: flex; align-items: center; gap: 0.8rem; cursor: pointer; text-transform: none; color: var(--text-primary); font-size: 0.95rem;">
-            <input type="checkbox" style="width: auto;"> Essential medications, bandages, and sunscreen lotion
+          <label style="display: flex; align-items: center; gap: 1rem; cursor: pointer; text-transform: none; color: var(--text-main); font-size: 0.9rem; font-weight: 400;">
+            <input type="checkbox" style="width: auto; border: none; border-bottom: none;"> Personal first-aid kit and insect repellents
           </label>
         </div>
       </div>
 
       <!-- Right Column: Accordion FAQs -->
       <div>
-        <h3 style="font-family: var(--font-display); font-size: 1.8rem; margin-bottom: 1rem;">Frequently Asked Questions</h3>
-        <p style="color: var(--text-secondary); margin-bottom: 2rem;">Quick answers regarding local tour permits, refunds, and transportation options:</p>
+        <h3 style="font-family: var(--font-serif); font-size: 1.8rem; font-weight: 400; margin-bottom: 1.5rem;">Frequently Inquired</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem; font-weight: 300; margin-bottom: 2rem;">Answers to administrative queries regarding entry permits, refunds, and transportation:</p>
 
-        <div class="glass-panel" style="padding: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+        <div class="faq-list">
           <!-- FAQ Item 1 -->
           <div class="faq-item">
             <div class="faq-question">
-              <span>Do I need special permits for mountain trails?</span>
+              <span>Are entry permits required for alpine valleys?</span>
               <span class="faq-toggle">+</span>
             </div>
             <div class="faq-answer">
-              Yes, certain high-altitude peak passes at Solitude Ridge require environmental entry passes. These can be pre-obtained during our check-out booking process.
+              Yes, certain preservation zones around Elysian Peaks require state environmental permits, which are bundled and generated during our booking checkouts.
             </div>
           </div>
 
           <!-- FAQ Item 2 -->
           <div class="faq-item">
             <div class="faq-question">
-              <span>What is the local refund and cancellation policy?</span>
+              <span>What is the standard cancellation window?</span>
               <span class="faq-toggle">+</span>
             </div>
             <div class="faq-answer">
-              We offer full refunds for trip cancellations processed at least 72 hours prior to scheduled departure dates. Accommodation refunds are dependent on individual hotel policies.
+              We offer full cancellation refunds on directory tickets processed 72 hours before departure. Hotel room refunds vary by accommodation provider.
             </div>
           </div>
 
           <!-- FAQ Item 3 -->
           <div class="faq-item">
             <div class="faq-question">
-              <span>Are local transport shuttle facilities provided?</span>
+              <span>Do bookings include regional transit shuttle?</span>
               <span class="faq-toggle">+</span>
             </div>
             <div class="faq-answer">
-              Yes, all premium and luxury bookings include complimentary airport shuttles and localized daily transfers between your hotel and the attractions.
-            </div>
-          </div>
-
-          <!-- FAQ Item 4 -->
-          <div class="faq-item">
-            <div class="faq-question">
-              <span>Is there 24/7 client booking support available?</span>
-              <span class="faq-toggle">+</span>
-            </div>
-            <div class="faq-answer">
-              Absolutely. Our cloud-deployed booking backend system guarantees uptime and is constantly supported by our support staff via live chat.
+              All luxury suite and standard lodge reservations include standard airport transfers and daily connection shuttles between lodging and coordinates.
             </div>
           </div>
         </div>
@@ -145,8 +135,8 @@
   <footer>
     <div class="footer-content">
       <div class="footer-brand">
-        <a href="index.html" class="logo" style="margin-bottom: 1rem;"><span>🌏</span> GoExplore</a>
-        <p>A premier tourism platform delivering smooth bookings and local guidance. Powered by containerized Kubernetes infrastructure.</p>
+        <a href="index.html" class="logo">GoExplore <span class="logo-dot"></span></a>
+        <p>A regional directory resource providing travel details, interactive coordinates mapping, and accommodation logging.</p>
       </div>
       <div class="footer-links">
         <h4>Explore</h4>
@@ -157,11 +147,11 @@
         </ul>
       </div>
       <div class="footer-links">
-        <h4>DevOps Infrastructure</h4>
+        <h4>DevOps Status</h4>
         <ul>
-          <li><a href="#">Jenkins Builds</a></li>
+          <li><a href="#">Jenkins Node</a></li>
           <li><a href="#">Docker Registry</a></li>
-          <li><a href="#">Nagios Health Checks</a></li>
+          <li><a href="#">Nagios Availability</a></li>
         </ul>
       </div>
     </div>
